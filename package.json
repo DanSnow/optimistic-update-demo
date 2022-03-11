@@ -17,5 +17,6 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.4",
     "vite": "^2.8.6"
-  }
+  },
+  "packageManager": "yarn@3.2.0"
 }
