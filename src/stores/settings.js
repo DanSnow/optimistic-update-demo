@@ -5,7 +5,7 @@ export const useSettings = defineStore({
   state: () => ({
     optimistic: false,
     forceError: false,
-    delay: 0,
+    delay: 1500,
   }),
 })
 

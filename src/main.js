@@ -1,3 +1,6 @@
+import 'bulma/css/bulma.css'
+import './fontawesome'
+
 import { createApp } from 'vue'
 import App from './App.vue'
 import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client/core'

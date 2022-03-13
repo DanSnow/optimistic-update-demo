@@ -1,10 +1,20 @@
 <template>
-  <div>
-    id: {{ article.id }}
-    <br />
-    title: {{ article.title }}
-    <br />
-    featured: <input type="checkbox" v-model="featured" /> {{ article.featured }}
+  <div class="tile">
+    <section class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          <strong class="mr-1">{{ article.id }}: </strong>
+          {{ article.title }}
+        </p>
+      </header>
+      <footer class="card-footer is-flex is-justify-content-center is-align-items-center">
+        <button class="button" @click="featured = !featured">
+          <span class="icon">
+            <Icon icon="star" :type="featured ? 'fas' : 'far'" />
+          </span>
+        </button>
+      </footer>
+    </section>
   </div>
 </template>
 
@@ -13,6 +23,7 @@ import { computed } from 'vue'
 import { useMutation } from '@vue/apollo-composable'
 import { useSettings } from '../stores/settings'
 import { gql } from '@apollo/client/core'
+import Icon from './Icon.vue'
 
 const props = defineProps({
   article: {
