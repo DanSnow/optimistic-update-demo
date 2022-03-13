@@ -3,7 +3,7 @@ import { useQuery } from '@vue/apollo-composable'
 import { gql } from '@apollo/client/core'
 import ArticleCard from './components/ArticleCard.vue'
 import { useSettings } from './stores/settings'
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
 
 const store = useSettings()
 
@@ -24,6 +24,14 @@ const delay = computed({
   set: (val) => {
     store.delay = val ? 1500 : 0
   },
+})
+
+const stop = watch(result, (res) => {
+  if (res) {
+    // once data is loaded, start delay the API call
+    delay.value = true
+    stop()
+  }
 })
 </script>
 
