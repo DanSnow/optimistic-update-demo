@@ -72,4 +72,23 @@ const featured = computed({
     )
   },
 })
+
+// Manually optimistic update
+// const tempFeatured = ref()
+
+// const featured = computed({
+//   get() {
+//     return tempFeatured.value ?? props.article.featured ?? false
+//   },
+//   async set(val) {
+//     tempFeatured.value = val
+
+//     await mutate({
+//       id: props.article.id,
+//       featured: val,
+//     })
+
+//     tempFeatured.value = undefined
+//   },
+// })
 </script>
