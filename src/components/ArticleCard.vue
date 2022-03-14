@@ -1,5 +1,5 @@
 <template>
-  <div class="tile">
+  <div class="tile is-child">
     <section class="card">
       <header class="card-header">
         <p class="card-header-title">
